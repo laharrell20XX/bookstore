@@ -1,11 +1,22 @@
-{% extends 'base.html' %}
-{% block main %}
+{% extends 'base.html' %} {% block main %}
 <main>
-    <ul>
-        {% for author in authors %}
-        <li>{{ author.name }} : {{ author.books.last.title }}</li>
-        {% endfor %}
-    </ul>
-    {% include 'components/paginate.html' %}
+    <div class="container">
+        <h1 class="text-center">Authors</h1>
+        <ul class="list-group">
+            {% for author in authors %}
+            <li class="list-group-item p-0 my-2 rounded-0">
+                <div class="row author-row px-3">
+                    <a class="col-3 border-right p-3" href="#">{{ author.name }}</a>
+                    <p class="col m-0 align-self-center">Last Book:
+                        <span>
+                            <a href="#">{{ author.books.last.title }}</a>
+                        </span>
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% include 'components/paginate.html' %}
+    </div>
 </main>
 {% endblock main %}
