@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.decorators.cache import cache_page
 from app import views
 
-cached_home = cache_page(60)(views.Home.as_view())
+cached_home = cache_page(1)(views.Home.as_view())
 
 urlpatterns = [
     path('', cached_home, name='home'),
@@ -13,5 +13,8 @@ urlpatterns = [
     path('author/', views.AuthorList.as_view(), name='author-list'),
     path('author/create/', views.AuthorCreate.as_view(), name='author-create'),
     path('author/<pk>/', views.AuthorDetail.as_view(), name='author-detail'),
-    path('author/<pk>/update/', views.AuthorUpdate.as_view(), name='author-update'),
+    path(
+        'author/<pk>/update/',
+        views.AuthorUpdate.as_view(),
+        name='author-update'),
 ]
