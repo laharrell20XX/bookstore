@@ -2,3 +2,10 @@
     text-decoration: none;
     color: rgb(6, 6, 177);
 }
+
+.title-authors span:after {
+    content: "| ";
+}
+.title-authors span:last-child:after {
+    content: "";
+}
