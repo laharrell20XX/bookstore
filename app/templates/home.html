@@ -1,5 +1,31 @@
-{% extends 'base.html' %}
-{% block main %}
-Home
-{{ book }}
+{% extends 'base.html' %} {% block main %}
+
+<main>
+    <div class="container d-flex flex-column">
+        <h1 class="text-center">
+            Welcome to Base Camp Book Store!
+        </h1>
+        <div class="card">
+            <h3 class="row m-0 justify-content-center">
+                Book of the Day
+            </h3>
+            <div class="row m-0 ">
+                <img class="col" src="#" />
+                <div class="book-of-day-info col card">
+                    <p>
+                        {{ book.title }}
+                    </p>
+                    <p>
+                        {{ book.authors }}
+                    </p>
+                    <p>
+                        ${{ book.price }}
+                    </p>
+                    <p>
+                        {{ book.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+</main>
 {% endblock main %}
