@@ -12,7 +12,10 @@
                     </a>
                     <div class="col m-0 align-self-center d-flex flex-column py-3">
                         <h5 class="m-0">{{ book.title }}</h5>
-                        <p class="m-0">By: {{ book.authors }}</p>
+                        <p class="m-0">By: {% for author in book.authors.all %}
+                            <span>
+                                <b>{{ author.name }}</b>,
+                            </span>{% endfor %} </p>
                     </div>
                 </div>
             </li>
