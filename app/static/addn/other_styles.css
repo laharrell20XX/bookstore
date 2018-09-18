@@ -9,3 +9,22 @@
 .title-authors span:last-child:after {
     content: "";
 }
+
+.book-of-day-info span:after {
+    content: "| ";
+}
+.book-of-day-info span:last-child:after {
+    content: "";
+}
+.banner {
+    border: 3px dotted gray;
+    border-right: 0px;
+    border-left: 0px;
+}
+
+.book-of-day-info {
+    border-left: 3px solid gray !important;
+    border-right: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+}
