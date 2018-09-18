@@ -1,17 +1,14 @@
 {% extends 'base.html' %} {% block main %}
 <main>
     <div class="container">
-        <h1 class="text-center">Authors</h1>
+        <h1 class="text-center mt-4">Authors</h1>
         <ul class="list-group">
             {% for author in authors %}
-            <li class="list-group-item p-0 my-2 rounded-0">
+            <li class="list-group-item p-0 my-2 rounded">
                 <div class="row author-row px-3">
-                    <a class="col-3 border-right p-3" href="#">{{ author.name }}</a>
-                    <p class="col m-0 align-self-center">Last Book:
-                        <span>
-                            <a href="#">{{ author.books.last.title }}</a>
-                        </span>
-                    </p>
+                    <a class="col-3 border-right p-3" href="{% url 'author-detail' %}" id="">{{ author.name }}</a>
+                    <a href="" class="col m-0 align-self-center p-3">
+                        <span class="text-body">Last Book: </span>{{ author.books.last.title }}</a>
                 </div>
             </li>
             {% endfor %}
