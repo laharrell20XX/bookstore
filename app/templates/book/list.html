@@ -10,12 +10,15 @@
                     <a class="col-3 border-right p-3" href="#">
                         <img src="{{ book.cover_image }}" />
                     </a>
-                    <div class="col m-0 align-self-center d-flex flex-column py-3">
+                    <div class="title-authors col m-0 align-self-center d-flex flex-column py-3">
                         <h5 class="m-0">{{ book.title }}</h5>
                         <p class="m-0">By: {% for author in book.authors.all %}
                             <span>
-                                <b>{{ author.name }}</b>,
-                            </span>{% endfor %} </p>
+                                <a href="#" class="">
+                                    <b>{{ author.name }}</b>
+                                </a>
+                            </span>{% endfor %}
+                        </p>
                     </div>
                 </div>
             </li>
