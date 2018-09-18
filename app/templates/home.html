@@ -15,12 +15,12 @@
                 <img class="col mr-5" src="{{ book.cover_image.url }}" />
                 <div class="book-of-day-info col card mx-3 p-5 border-left rounded-0">
                     <h4>
-                        <a href="#">{{ book.title }}</a>
+                        <a href="{% url 'book-detail' book.id %}">{{ book.title }}</a>
                     </h4>
                     <p>
                         {% for author in book.authors.all %}
                         <span>
-                            <a href="#">{{ author }}</a>
+                            <a href="{% url 'author-detail' author.id %}">{{ author }}</a>
                         </span>
                         {% endfor %}
                     </p>
