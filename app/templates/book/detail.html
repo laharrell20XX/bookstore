@@ -1,4 +1,26 @@
-{% extends 'base.html' %}
-{% block main %}
-{{ book }}
+{% extends 'base.html' %} {% block main %}
+
+<main>
+    <div class="container">
+        <div class="card">
+            <h1 class="">{{ book }}</h1>
+            <div class="row other-info">
+                <div class="book-image col">
+                    <img src="#" />
+                </div>
+                <div class="book-info col">
+                    <div class="card">
+                        <p>
+                            ${{ book.price }}
+                        </p>
+                        <p>
+                            Description:
+                            <br>{{ book.description }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 {% endblock main %}
