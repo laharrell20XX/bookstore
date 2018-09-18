@@ -6,7 +6,7 @@
             {% for author in authors %}
             <li class="list-group-item p-0 my-2 rounded">
                 <div class="row author-row px-3">
-                    <a class="col-3 border-right p-3" href="{% url 'author-detail' %}" id="">{{ author.name }}</a>
+                    <a class="col-3 border-right p-3" href="#" id="">{{ author.name }}</a>
                     <a href="" class="col m-0 align-self-center p-3">
                         <span class="text-body">Last Book: </span>{{ author.books.last.title }}</a>
                 </div>
