@@ -1,6 +1,29 @@
-{% extends 'base.html' %}
-{% block main %}
+{% extends 'base.html' %} {% block main %}
 <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
+    {% csrf_token %} {{ form.errors }}
+    <legend>Create a Book</legend>
+    <div class="form-group form-inline">
+        <label for="title">Title: </label>
+        <input class="form-control" type="text" placeholder="Enter the title of the Book" name="title" value="{{ book.title }}" required="required"
+        />
+    </div>
+    <div class="form-group form-inline">
+        <label for="price">Price: </label>
+        <input class="form-control" type="text" placeholder="Enter the price of the book" name="price" value="{{ book.price }}" required="required"
+        />
+    </div>
+    <div class="form-group form-inline">
+        <label for="authors form-inline">Authors:</label>
+        {% include './components/authors-selector.html' %}
+    </div>
+    <div class="form-group form-inline">
+        <label for="description">Description:</label>
+        <textarea class="form-control" name="description" value="{{ book.description }}" required="required"></textarea>
+    </div>
+    <div class="form-group d-flex">
+        <label for="cover_image">Cover Photo: </label>
+        <input type="file" class="form-control-file" name="cover_image" required="required" />
+    </div>
+    <button type="submit">Submit</button>
 </form>
 {% endblock main %}
