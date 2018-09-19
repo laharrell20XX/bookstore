@@ -5,16 +5,18 @@
         <h1 class="text-center mt-4">Books</h1>
         <ul class="list-group">
             {% for book in books %}
-            <li class="list-group-item p-0 my-2 rounded">
+            <li class="list-group-item p-0 my-2 rounded border-secondary">
                 <div class="row book-row px-3">
-                    <a class="col-3 border-right p-3" href="#">
-                        <img src="{{ book.cover_image }}" />
+                    <a class="col-3 border-right border-secondary p-3 m-0" href="{% url 'book-detail' book.id %}">
+                        <img class="img-fluid" src="{{ book.cover_image.url }}" width="240" height="300" />
                     </a>
-                    <div class="title-authors col m-0 align-self-center d-flex flex-column py-3">
-                        <h5 class="m-0">{{ book.title }}</h5>
-                        <p class="m-0">By: {% for author in book.authors.all %}
+                    <div class="title-authors col m-0 d-flex flex-column py-3">
+                        <h5 class="my-auto">
+                            <a href="{% url 'book-detail' book.id %}">{{ book.title }}</a>
+                        </h5>
+                        <p class="my-auto">By: {% for author in book.authors.all %}
                             <span>
-                                <a href="#" class="">
+                                <a href="{% url 'author-detail' author.id %}" class="">
                                     <b>{{ author.name }}</b>
                                 </a>
                             </span>{% endfor %}
