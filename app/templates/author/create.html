@@ -3,8 +3,9 @@
     {% csrf_token %}
     <h4 class="">Create an author</h4>
     <div class="form-group form-inline mt-3">
-        <label for="Name">Name:
-            <input class="form-control ml-5" type="text" placeholder="Enter the Author's Name" />
+        <label for="name">Name:
+            <input class="form-control ml-5" type="text" placeholder="Enter the Author's Name" name="name" required="required" value="{{ author.name }}"
+            />
         </label>
     </div>
     <button class="btn btn-primary" type="submit">Submit</button>
