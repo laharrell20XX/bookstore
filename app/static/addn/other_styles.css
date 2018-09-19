@@ -28,3 +28,10 @@
     border-top: 0px;
     border-bottom: 0px;
 }
+.create-dropdown a {
+    color: #007bff;
+}
+.create-dropdown a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
