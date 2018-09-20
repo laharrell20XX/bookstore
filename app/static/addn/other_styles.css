@@ -35,3 +35,10 @@
     text-decoration: underline;
     color: #007bff;
 }
+.create-book-controls input,
+.create-book-controls textarea {
+    border-color: #aaaaaa;
+}
+.author-creator input {
+    border-color: #aaaaaa;
+}
