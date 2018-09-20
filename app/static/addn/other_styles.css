@@ -42,3 +42,6 @@
 .author-creator input {
     border-color: #aaaaaa;
 }
+.separator {
+    border: 2px solid #aaaaaa;
+}
