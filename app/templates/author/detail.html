@@ -1,7 +1,12 @@
 {% extends 'base.html' %} {% block main %}
 <div class="container d-flex flex-column">
-    <div class="author-name mx-auto mt-3">
-        <h1 class="">{{ author }}</hl>
+    <div class="mx-auto header d-flex mt-3">
+        <div class="author-name">
+            <h1>{{ author }}</hl>
+        </div>
+        <div class="update-link ml-3">
+            <a href="{% url 'author-update' author.id %}">Update</a>
+        </div>
     </div>
     {% if author.books.all %}
     <ul class="list-group">
