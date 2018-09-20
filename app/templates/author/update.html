@@ -1,6 +1,14 @@
-{% extends 'base.html' %}
-{% block main %}
-<form method="post">
+{% extends 'base.html' %} {% block main %}
+<form class="p-4 d-flex" method="post">
     {% csrf_token %}
+    <div class="author-updater mx-auto ">
+        <h4 class="">Update</h4>
+        <div class="form-group form-inline row mt-4">
+            <label class="col-3 col-form-label" for="name">Name: </label>
+            <input class="form-control col-9" type="text" placeholder="Enter the author's name" name="name" value="{{ author.name }}"
+                required="required" />
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
 </form>
 {% endblock main %}
