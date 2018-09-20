@@ -2,7 +2,7 @@
 <form class="d-flex" method="post" enctype="multipart/form-data">
     {% csrf_token %} {{ form.errors }}
     <div class="create-book-controls p-3 mx-auto col-lg-6 col-sm-6 col-md-5">
-        <legend class="mb-4 text-center">Create a Book</legend>
+        <legend class="mb-4 text-center">Add a Book</legend>
         <div class="form-group form-inline row">
             <label class="col-3 col-form-label" for="title">Title: </label>
             <input class="form-control col-8" type="text" placeholder="Enter the title of the Book" name="title" value="{{ book.title }}"
