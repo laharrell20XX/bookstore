@@ -1,6 +1,35 @@
-{% extends 'base.html' %}
-{% block main %}
+{% extends 'base.html' %} {% block main %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    <div class="update-book-controls p-3 mx-auto col-lg-6 col-sm-6 col-md-5">
+        <legend class="mb-4 text-center">Update this book</legend>
+        <div class="form-group form-inline row">
+            <label class="col-3 col-form-label" for="title">Title: </label>
+            <input class="form-control col-8" type="text" placeholder="Enter the title of the Book" name="title" value="{{ book.title }}"
+                required="required" />
+        </div>
+        <div class="form-group form-inline row">
+            <label class="col-3 col-form-label" for="price">Price: </label>
+            <input class="form-control col-3" type="text" placeholder="ex: 19.99" name="price" value="{{ book.price }}" required="required"
+            />
+        </div>
+        <div class="form-group form-inline row mt-3">
+            <label class="col-3 col-form-label" for="authors ">Authors:</label>
+            <div class="borrowed-author-selector col-8 p-0">
+                {% include './components/authors-selector.html' %}
+            </div>
+        </div>
+        <div class="form-group form-inline row mt-3">
+            <label class="col-3 col-form-label" for="description">Description:</label>
+            <textarea class="form-control col-8" name="description" value="{{ book.description }}" required="required"></textarea>
+        </div>
+        <div class="form-group row mt-3">
+            <label class="col-3 col-form-label text-center" for="cover_image">Cover Photo: </label>
+            <input type="file" class="form-control-file col-8 p-0 select-file" name="cover_image" />
+        </div>
+        <div class="mx-auto col-4 mt-3">
+            <button class="col btn btn-primary mt-3" type="submit">Submit</button>
+        </div>
+    </div>
 </form>
 {% endblock main %}
