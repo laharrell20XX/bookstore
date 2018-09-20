@@ -1,24 +1,35 @@
 {% extends 'base.html' %} {% block main %}
 
 <main>
-    <div class="container">
-        <div class="card">
-            <h1 class="">{{ book.title }}</h1>
-            <div class="row other-info">
-                <div class="book-image col">
-                    <img src="{{ book.cover_image.url }}" />
+    <div class="container pt-4">
+        <div class="card col-12 book-details border-0">
+            <div class="header d-flex mx-auto">
+                <h1 class="">{{ book.title }}</h1>
+            </div>
+            <p class="mx-auto">
+                By: {% for author in book.authors.all %}
+                <span>
+                    <a href="{% url 'author-detail' author.id %}">{{ author }}</a>
+                </span>
+                {% endfor %}
+            </p>
+            <div class="book-image row m-0 mx-auto mt-5 mb-5">
+                <img class="img-fluid" src="{{ book.cover_image.url }}" width="470" height="600" />
+            </div>
+            <div class="separator "></div>
+            <div class="book-info row m-0 mb-4">
+                <div class="mt-5">
+                    <p>
+                        ${{ book.price }}
+                    </p>
+                    <p>
+                        Description:
+                        <br>{{ book.description }}
+                    </p>
                 </div>
-                <div class="book-info col">
-                    <div class="card">
-                        <p>
-                            ${{ book.price }}
-                        </p>
-                        <p>
-                            Description:
-                            <br>{{ book.description }}
-                        </p>
-                    </div>
-                </div>
+            </div>
+            <div class="update-link ml-auto">
+                <a href="{% url 'book-update' book.id %}">Update Page</a>
             </div>
         </div>
     </div>
