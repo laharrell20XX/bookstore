@@ -1,4 +1,41 @@
-{% extends 'base.html' %}
-{% block main %}
-{{ author }}
+{% extends 'base.html' %} {% block main %}
+<div class="container d-flex flex-column">
+    <div class="author-name mx-auto mt-3">
+        <h1 class="">{{ author }}</hl>
+    </div>
+    {% if author.books.all %}
+    <ul class="list-group">
+        {% for book in author.books.all %}
+        <li class="list-group-item p-0 my-2 rounded border-secondary">
+            <div class="row book-row px-3">
+                <a class="col-3 border-right border-secondary p-3 m-0" href="{% url 'book-detail' book.id %}">
+                    <img class="img-fluid" src="{{ book.cover_image.url }}" width="240" height="300" />
+                </a>
+                <div class="title-authors col m-0 d-flex flex-column py-3">
+                    <div class="d-flex justify-content-between my-auto">
+                        <h5 class="title">
+                            <a href="{% url 'book-detail' book.id %}">{{ book.title }}</a>
+                        </h5>
+                        <p>${{ book.price }}</p>
+                    </div>
+                    <p class="my-auto">By: {% for author in book.authors.all %}
+                        <span>
+                            <a href="{% url 'author-detail' author.id %}" class="">
+                                <b>{{ author.name }}</b>
+                            </a>
+                        </span>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <div class="mx-auto mt-5">
+        <a href="{% url  'book-create' %}">Add More Books</a>
+    </div>
+    {% endif %}
+</div>
+
 {% endblock main %}
