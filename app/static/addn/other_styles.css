@@ -1,12 +1,15 @@
-.author-row a:hover {
+.author-row a:hover,
+a:hover {
     text-decoration: none;
     color: rgb(6, 6, 177);
 }
 
-.title-authors span:after {
+.title-authors span:after,
+.book-details .authors span:after {
     content: "| ";
 }
-.title-authors span:last-child:after {
+.title-authors span:last-child:after,
+.book-details .authors span:last-child:after {
     content: "";
 }
 
