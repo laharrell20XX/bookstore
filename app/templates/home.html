@@ -8,12 +8,14 @@
             </h1>
         </div>
         <div class="card mt-5 border-0 pb-5">
-            <h3 class="row m-0 my-3 mx-auto">
+            <h3 class="book-o-day row m-0 my-3 mx-auto">
                 Book of the Day
             </h3>
-            <div class="row m-0 ">
-                <img class="col mr-5" src="{{ book.cover_image.url }}" />
-                <div class="book-of-day-info col card mx-3 p-5 border-left rounded-0">
+            <div class="row m-0">
+                <div class="col mr-2">
+                    <img class="img-fluid" src="{{ book.cover_image.url }}" />
+                </div>
+                <div class="book-of-day-info col-sm-6 card mx-2 p-5 border-left rounded-0">
                     <h4>
                         <a href="{% url 'book-detail' book.id %}">{{ book.title }}</a>
                     </h4>
