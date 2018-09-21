@@ -48,3 +48,25 @@ a:hover {
 .separator {
     border: 2px solid #aaaaaa;
 }
+.author-list * {
+    border-color: #aaaaaa !important;
+}
+
+@media (max-width: 480px) {
+    .book-of-day-info {
+        border: 0px solid !important;
+    }
+    .welcome {
+        font-size: 1.2rem;
+    }
+    .book-o-day {
+        font-size: 1.2rem;
+    }
+    .author-list {
+        font-size: 0.9rem;
+    }
+    .author-row .author-name {
+        border-right: 0px solid !important;
+        border-bottom: 1px solid #aaaaaa;
+    }
+}
